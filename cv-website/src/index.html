@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My CV</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- Add GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="main-title">Waykin Sirilert</h1>
+    <p id="subtitle">Graphic Hobbyist</p>
+  </header>
+  
+  <nav>
+    <button id="btn-experience">Experience</button>
+    <button id="btn-education">Education</button>
+    <button id="btn-contact">Contact</button>
+  </nav>
+  
+  <section id="experience">
+    <h2 style="text-align: center; margin-bottom: 32px;">Experience</h2>
+    <div class="cv-experience">
+
+      <div class="job-block">
+        <h3>
+          <span class="job-title">Airbus</span>
+          <span class="cv-role">— Illustrator</span>
+        </h3>
+        <div class="job-meta">
+          <span class="cv-location">📍 Bangkok, Thailand</span>
+          <span class="cv-date">| 🗓️ Nov 2022 – Present (2 yrs 10 mos)</span>
+        </div>
+        <ul>
+          <li>Created technical and conceptual illustrations for aerospace-related materials.</li>
+          <li>Utilized <strong>Adobe Illustrator</strong> and <strong>Photoshop</strong> for visual assets and design.</li>
+          <li>Worked with <strong>SAP Programs</strong> and collaborated with <strong>Umlaut</strong> for project workflows.</li>
+        </ul>
+      </div>
+
+      <div class="job-block">
+        <h3>
+          <span class="job-title">Arctica Company</span>
+          <span class="cv-role">— Junior DevOps</span>
+        </h3>
+        <div class="job-meta">
+          <span class="cv-location">📍 Bangkok, Thailand</span>
+          <span class="cv-date">| 🗓️ Jul 2022 – Present (5 mos)</span>
+        </div>
+        <ul>
+          <li>Assisted in CI/CD pipeline setup, infrastructure automation, and system monitoring.</li>
+          <li>Supported version control and deployment processes in agile environments.</li>
+        </ul>
+      </div>
+
+      <div class="job-block">
+        <h3>
+          <span class="job-title">Puremed Inter</span>
+          <span class="cv-role">— Sales Employee</span>
+        </h3>
+        <div class="job-meta">
+          <span class="cv-location">📍 Phra Nakhon, Bangkok, Thailand</span>
+          <span class="cv-date">| 🗓️ Dec 2020 – Oct 2022 (1 yr 11 mos)</span>
+        </div>
+        <ul>
+          <li>Managed product presentations and customer support for medical supplies.</li>
+          <li>Built long-term client relationships and achieved sales targets.</li>
+        </ul>
+      </div>
+
+      <div class="job-block">
+        <h3>
+          <span class="job-title">Thai Lion Air</span>
+          <span class="cv-role">— Technical Service Officer</span>
+        </h3>
+        <div class="job-meta">
+          <span class="cv-location">📍 Don Mueang International Airport (DMK)</span>
+          <span class="cv-date">| 🗓️ Jul 2016 – Sep 2020 (4 yrs 3 mos)</span>
+        </div>
+        <ul>
+          <li>Supported aircraft maintenance operations and documentation.</li>
+          <li>Coordinated with engineering teams to ensure compliance and safety.</li>
+        </ul>
+      </div>
+
+      <div class="job-block">
+        <h3>
+          <span class="job-title">DIAKRIT International Ltd</span>
+          <span class="cv-role">— Photo Editor</span>
+        </h3>
+        <div class="job-meta">
+          <span class="cv-location">📍 Bangkok, Thailand</span>
+          <span class="cv-date">| 🗓️ Oct 2012 – Apr 2014 (1 yr 7 mos)</span>
+        </div>
+        <ul>
+          <li>Edited real estate photographs from Sweden using <strong>Adobe Photoshop</strong>.</li>
+          <li>Ensured high-quality visual output for marketing and listing platforms.</li>
+        </ul>
+      </div>
+
+      <div class="job-block">
+        <h3>
+          <span class="job-title">Las Iguanas</span>
+          <span class="cv-role">— Bartender</span>
+        </h3>
+        <div class="job-meta">
+          <span class="cv-location">📍 UK</span>
+          <span class="cv-date">| 🗓️ 2009 – 2010 (1 yr)</span>
+        </div>
+        <ul>
+          <li>Prepared cocktails and beverages in a high-paced environment.</li>
+          <li>Delivered excellent customer service and maintained bar stock.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+  
+  <section id="education">
+    <h2 style="text-align: center;">Education</h2>
+    <div class="cv-education">
+      <h3>Bangkok University: Bachelor's Degree — Major in Advertising, Communication Arts 2004 – 2008</h3>
+
+      <h3>Kingston University London: Preparation for MA Graphic Design 2009 – 2010</h3>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <h2 id="contact-title" style="font-size:2.5rem; text-align:center; letter-spacing:2px; margin-bottom:24px;">
+      Contact
+    </h2>
+    <p id="contact-email" style="font-size:1.5rem; text-align:center; font-weight:bold;">
+      waykin.sirilert@airbus.com
+    </p>
+  </section>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    // Floating animation for header
+    gsap.to("#main-title", {
+      y: 20,
+      repeat: -1,
+      yoyo: true,
+      duration: 2,
+      ease: "power1.inOut"
+    });
+    gsap.to("#subtitle", {
+      y: -10,
+      repeat: -1,
+      yoyo: true,
+      duration: 2.5,
+      ease: "power1.inOut"
+    });
+
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function showSection(sectionId) {
+      document.querySelectorAll('section').forEach(sec => {
+        sec.classList.remove('visible-section');
+      });
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.classList.add('visible-section');
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    document.getElementById('btn-experience').onclick = () => showSection('experience');
+    document.getElementById('btn-education').onclick = () => showSection('education');
+    document.getElementById('btn-contact').onclick = () => showSection('contact');
+
+    // Optionally, show the first section by default
+    showSection('experience');
+
+    // GSAP3 Line Effect for Contact Title
+    gsap.fromTo("#contact-title", 
+      { 
+        scaleX: 0.2, 
+        opacity: 0, 
+        transformOrigin: "left center" 
+      }, 
+      { 
+        scaleX: 1, 
+        opacity: 1, 
+        duration: 2, 
+        ease: "power2.out",
+        delay: 0.2
+      }
+    );
+    gsap.fromTo("#contact-email", 
+      { 
+        y: 40, 
+        opacity: 0 
+      }, 
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 2, 
+        ease: "power2.out",
+        delay: 1
+      }
+    );
+  </script>
+</body>
+</html>
