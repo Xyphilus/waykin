@@ -1,48 +1,41 @@
-# CV Website
+# Cyberpunk Red/Black GSAP Template
 
-This project is a simple, clean black and white CV website designed to showcase personal information, experience, and education. The website features a minimalist design with buttons for easy navigation.
+A simple, sophisticated cyberpunk (red/black) website powered by GSAP 3.
+Includes three panels (About, Experience, Contact) and an animated reel gallery
+that supports local image uploads.
 
-## Project Structure
+## Live deployment
 
+This repo deploys automatically to GitHub Pages from `cyberpunk-redblack-template/`.
+After pushing to `main`, check the Actions tab for the "Deploy to GitHub Pages"
+workflow, or visit Settings → Pages for the live URL.
+
+## Quick start (local)
+
+```bash
+# go to the template folder
+cd cyberpunk-redblack-template
+python3 -m http.server 5173
+# open http://localhost:5173
 ```
-cv-website
-├── src
-│   ├── index.html       # Main HTML document for the CV website
-│   ├── styles
-│   │   └── main.css     # CSS styles for the website
-│   └── scripts
-│       └── main.js      # JavaScript for interactive elements
-├── README.md            # Documentation for the project
-```
 
-## Getting Started
+- Experience → Showcase → Upload Images to add your images
+- Hover the reel to pause the animation
 
-To set up and run the website locally, follow these steps:
+## Edit content
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
+- Update `cyberpunk-redblack-template/config.js` to change title, tagline, about text,
+  experience items, and contact info.
+- Tweak colors and styles in `cyberpunk-redblack-template/styles.css` (see CSS variables at top).
 
-2. Navigate to the project directory:
-   ```
-   cd cv-website
-   ```
+## Structure
 
-3. Open the `src/index.html` file in your web browser to view the CV website.
-
-## Features
-
-- Clean black and white design
-- Sections for personal information, experience, and education
-- Navigation buttons for easy access to different sections
-
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript
+- `cyberpunk-redblack-template/index.html` — HTML layout
+- `cyberpunk-redblack-template/styles.css` — Red/black neon theme
+- `cyberpunk-redblack-template/config.js` — Easy content configuration
+- `cyberpunk-redblack-template/script.js` — GSAP animations, navigation, gallery
+- `.github/workflows/pages.yml` — GitHub Pages deployment
 
 ## License
 
-This project is licensed under the MIT License.
+MIT
