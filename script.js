@@ -92,31 +92,41 @@
   // Navigation: animate panel transition
   function showPanel(targetSelector) {
     const target = document.querySelector(targetSelector);
-    if (!target || target === currentPanel) return;
+    if (!target) {
+      console.error('Panel not found:', targetSelector);
+      return;
+    }
+    
+    if (target === currentPanel) return;
 
-    const outgoing = currentPanel;
-    const incoming = target;
-
-    // Animate out current
-    gsap.to(outgoing.querySelector('.panel-inner'), {
-      duration: 0.35,
-      y: 12,
-      opacity: 0,
-      ease: 'power2.out',
-      onComplete: () => {
-        outgoing.classList.remove('is-active');
-
-        // Set up incoming initial state and show
-        incoming.classList.add('is-active');
-        gsap.fromTo(
-          incoming.querySelector('.panel-inner'),
-          { y: -12, opacity: 0 },
-          { duration: 0.45, y: 0, opacity: 1, ease: 'power3.out' }
-        );
-
-        currentPanel = incoming;
-      },
+    // Update nav button states
+    navButtons.forEach(btn => {
+      if (btn.getAttribute('data-target') === targetSelector) {
+        btn.style.borderColor = 'var(--red)';
+        btn.style.color = 'var(--red)';
+      } else {
+        btn.style.borderColor = 'var(--border)';
+        btn.style.color = 'var(--text)';
+      }
     });
+
+    // Hide all panels first
+    panels.forEach(panel => {
+      panel.classList.remove('is-active');
+    });
+
+    // Show target panel
+    target.classList.add('is-active');
+    currentPanel = target;
+
+    // Animate the panel content
+    const panelInner = target.querySelector('.panel-inner');
+    if (panelInner) {
+      gsap.fromTo(panelInner, 
+        { y: -12, opacity: 0 },
+        { duration: 0.45, y: 0, opacity: 1, ease: 'power3.out' }
+      );
+    }
   }
 
   // GSAP intro and button hover effects
@@ -256,8 +266,10 @@
   // Wire events
   function wireEvents() {
     navButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
         const target = btn.getAttribute('data-target');
+        console.log('Nav clicked:', target); // Debug log
         showPanel(target);
       });
     });
@@ -275,5 +287,8 @@
     wireEvents();
     animateIntro();
     addPlaceholderReel();
+    
+    // Set initial nav button state
+    showPanel('#about');
   });
 })();

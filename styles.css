@@ -75,8 +75,13 @@ body {
 }
 .panel {
   display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.panel.is-active { display: block; }
+.panel.is-active { 
+  display: block; 
+  opacity: 1;
+}
 .panel-inner {
   border: 1px solid var(--border); border-radius: 14px;
   background: linear-gradient(180deg, rgba(255,0,51,0.06), rgba(255,0,51,0.02) 40%, transparent 100%), var(--panel);
