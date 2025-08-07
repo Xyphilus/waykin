@@ -1,5 +1,5 @@
 window.SITE_CONFIG = {
-  siteTitle: "NOMAD // 2077",
+  siteTitle: "TEST UPDATE - NOMAD // 2077",
   tagline: "Red / Black Neon Interface",
   footer: "© 2077 — Night City",
 
